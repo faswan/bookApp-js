@@ -1,0 +1,16 @@
+{
+	"name": "bookapp",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./src/app.js",
+	"scripts": {
+		"start": "live-server",
+		"build": "rollup"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^8.56.0",
+		"live-server": "^1.2.2"
+	}
+}
