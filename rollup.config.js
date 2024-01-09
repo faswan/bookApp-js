@@ -8,5 +8,8 @@ export default {
 		dir: 'dist',
 		format: 'iife'
 	},
-	plugins: [nodeResolve(), css()]
+	plugins: [
+	nodeResolve(),
+	css()
+	]
 };
