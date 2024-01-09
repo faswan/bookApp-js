@@ -16,5 +16,8 @@
 		"live-server": "^1.2.2",
 		"rollup": "^4.9.4",
 		"rollup-plugin-import-css": "^3.3.5"
+	},
+	"dependencies": {
+		"on-change": "^5.0.0"
 	}
 }

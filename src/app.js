@@ -6,6 +6,9 @@ class App {
 		{ path: "", view: MainView },
 		{ path: "#404", view: NotFoundView }
 	]
+	appState = {
+		favorites: []
+	}
 	constructor() {
 		window.addEventListener('hashchange', this.route.bind(this))
 		this.route()
@@ -20,7 +23,7 @@ class App {
 		if(this.currentView) {
 			this.currentView.destroy()
 		}
-		this.currentView = new view()
+		this.currentView = new view(this.appState)
 		this.currentView.render()
 	}
 }
