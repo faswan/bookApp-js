@@ -20,24 +20,24 @@
 .search-input-place {
 	width: 533px;
 	height: 56px;
+	border: none;
 	border-radius: 5px;
 	background: #DEDEDE;
 	padding-left: 58px;
-	border: none;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 32px;
 }
 
 .btn-search {
-	background-color: #121212;
-	border: none;
 	width: 56px;
 	height: 56px;
+	background-color: #121212;
+	border: none;
 	border-radius: 5px;
 	margin-left: 11px;
-	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	cursor: pointer;
 }

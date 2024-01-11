@@ -7,6 +7,11 @@ export class Search extends DivComponent {
 		this.state = state
 	}
 
+	search() {
+		const value = document.querySelector('input').value
+		this.state.searchQuery = value
+	}
+
 	render() {
 		this.el.classList.add('search-input')
 		this.el.innerHTML = `
@@ -18,6 +23,17 @@ export class Search extends DivComponent {
 			<button class="btn-search"><img src="static/img/search-button.svg" alt="search"></button>
 		</form>
 		`
+		this.el.querySelector('button').addEventListener('click', (e) => {
+			e.preventDefault()
+			this.search()
+		})
+
+		this.el.querySelector('input').addEventListener('keydown', (e) => {
+			if(e.code === 'Enter') {
+				e.preventDefault()
+				this.search()
+			}
+		})
 		return this.el
 	}
 }
