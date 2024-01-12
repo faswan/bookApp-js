@@ -1,10 +1,12 @@
 import { MainView } from './views/main/main.js'
 import { NotFoundView } from './views/notfound/notfound.js'
+import { Favorites } from './views/favorites/favorites.js'
 
 class App {
 	routes = [
 		{ path: "", view: MainView },
-		{ path: "#404", view: NotFoundView }
+		{ path: "#404", view: NotFoundView },
+		{ path: "#favorites", view: Favorites }
 	]
 	appState = {
 		favorites: []

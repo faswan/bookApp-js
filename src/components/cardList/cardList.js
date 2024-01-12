@@ -9,6 +9,18 @@ export class CardList extends DivComponent {
 		this.appstate = appstate
 	}
 
+	offsetPlus(e) {
+		e.preventDefault()
+		this.parentstate.offset = this.parentstate.offset + 1
+	}
+
+	offsetMinus(e) {
+		e.preventDefault()
+		if (this.parentstate.offset) {
+			this.parentstate.offset = this.parentstate.offset -1
+		}
+	}
+
 	render() {
 		if (this.parentstate.loading) {
 			this.el.classList.add("loader-wrapper")
@@ -26,7 +38,9 @@ export class CardList extends DivComponent {
 		this.footer = document.createElement('div')
 		this.footer.classList.add('footer')
 		this.footer.innerHTML = `<a class="leftarrow" href=""><img src="static/img/arrow-left.svg" alt="arrow-left">Предыдущая страница</a>
-		<a class="rightarrow" href="">Следующая страница<img src="static/img/arrow-right.svg" alt="arrow-right"></a>`
+		<a class="rightarrow" href="#">Следующая страница<img src="static/img/arrow-right.svg" alt="arrow-right"></a>`
+		this.footer.querySelector('.rightarrow').addEventListener('click', this.offsetPlus.bind(this))
+		this.footer.querySelector('.leftarrow').addEventListener('click', (e) => this.offsetMinus(e))
 		if (this.parentstate.numFound) {
 			this.el.append(this.footer)
 		}

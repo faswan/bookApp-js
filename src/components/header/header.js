@@ -10,17 +10,17 @@ export class Header extends DivComponent {
 	render() {
 		this.el.classList.add('header')
 		this.el.innerHTML = `
-		<a class="logomain" href="">
+		<a class="logomain" href="#">
 			<img class="main-logo" src="static/img/logo.svg" alt="logo">
 		</a>
 		<div class="righside">
-			<a href="">
+			<a href="#">
 				<div class="search-block">
 					<img src="static/img/search-header.svg" alt="search">
 					Поиск книг
 				</div>
 			</a>
-			<a href="">
+			<a href="#favorites">
 				<div class="favorites">
 					<img src="static/img/favorites-header.svg" alt="favorites">
 					Избранное

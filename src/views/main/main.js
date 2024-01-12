@@ -20,6 +20,11 @@ export class MainView extends AbstractView {
 		this.setTitle('Поиск книг')
 	}
 
+	destroy() {
+		onChange.unsubscribe(this.appstate)
+		onChange.unsubscribe(this.state)
+	}
+
 	appStateHook(path) {
 		if (path === 'favorites') {
 			this.render()
@@ -27,7 +32,7 @@ export class MainView extends AbstractView {
 	}
 
 	async stateHook(path) {
-		if (path === 'searchQuery') {
+		if (path === 'searchQuery' || path === 'offset') {
 			this.state.loading = true
 			const data = await this.loadList(this.state.searchQuery, this.state.offset)
 			this.state.loading = false
